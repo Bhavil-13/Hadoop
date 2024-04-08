@@ -1,0 +1,25 @@
+sudo cp /home/bhavil/Desktop/NoSQL-A2/demo/target/trial-1.1-SNAPSHOT.jar /home/hdoop/testingCodes
+hadoop jar trial-1.1-SNAPSHOT.jar TopWords /testers/Wikipedia-50-ARTICLES.tar /outputsp1
+hdfs dfs -cat /outputsp1/part-r-00000
+
+
+cp /home/bhavil/Desktop/NoSQL-A2/demo/codes/<Name> /home/bhavil/Desktop/NoSQL-A2/demo/src/main/java/sample
+maven clean install
+
+
+/outputs/TopWords/
+/outputs/CoOccurrenceMatrix/
+/outputs/CoOccurrenceStripe/
+/outputs/DF/
+/outputs/TF/
+
+sudo cp /home/bhavil/Desktop/NoSQL-A2/demo/target/trial-1.0-SNAPSHOT.jar /home/hdoop/testingCodes
+
+# Running the Hadoop job with the corresponding name
+hadoop jar /home/hdoop/testingCodes/trial-1.0-SNAPSHOT.jar "$name" /testers/Wikipedia-50-ARTICLES.tar "$output_folder"
+
+# Displaying the output
+hdfs dfs -cat "$output_folder/part-r-00000"
+
+
+hdfs dfs -copyToLocal <currdir> <"$output_folder/part-r-00000">
