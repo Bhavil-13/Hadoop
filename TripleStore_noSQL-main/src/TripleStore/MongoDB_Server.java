@@ -192,38 +192,6 @@ public class MongoDB_Server implements IServer {
 
     }
 
-//     public boolean brachaAgreement(Triple triple, IServer _destination) {
-//     int n = 2;
-//     int t = (n - 1) / 3;
-//     int threshold = n - t;
-
-//     // Phase 1: Send
-//     List<Triple> receivedTriples = broadcastTriple(triple, _destination);
-
-//     // Phase 2: Echo
-//     Map<String, Integer> countMap = new HashMap<>();
-//     for (Triple t : receivedTriples) {
-//         String key = t.get_subject() + t.get_predicate() + t.get_object() + t.get_timestamp().toString();
-//         countMap.put(key, countMap.getOrDefault(key, 0) + 1);
-//     }
-
-//     // Find the most agreed-upon version
-//     String agreedKey = null;
-//     int maxCount = 0;
-//     for (Map.Entry<String, Integer> entry : countMap.entrySet()) {
-//         if (entry.getValue() >= threshold && entry.getValue() > maxCount) {
-//             agreedKey = entry.getKey();
-//             maxCount = entry.getValue();
-//         }
-//     }
-
-//     // Phase 3: Ready
-//     if (maxCount >= 2 * t + 1) {
-//         return true;
-//     }
-
-//     return false;
-// }
 
 
 
