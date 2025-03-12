@@ -192,6 +192,75 @@ public class MongoDB_Server implements IServer {
 
     }
 
+//     public boolean brachaAgreement(Triple triple, IServer _destination) {
+//     int n = 2;
+//     int t = (n - 1) / 3;
+//     int threshold = n - t;
+
+//     // Phase 1: Send
+//     List<Triple> receivedTriples = broadcastTriple(triple, _destination);
+
+//     // Phase 2: Echo
+//     Map<String, Integer> countMap = new HashMap<>();
+//     for (Triple t : receivedTriples) {
+//         String key = t.get_subject() + t.get_predicate() + t.get_object() + t.get_timestamp().toString();
+//         countMap.put(key, countMap.getOrDefault(key, 0) + 1);
+//     }
+
+//     // Find the most agreed-upon version
+//     String agreedKey = null;
+//     int maxCount = 0;
+//     for (Map.Entry<String, Integer> entry : countMap.entrySet()) {
+//         if (entry.getValue() >= threshold && entry.getValue() > maxCount) {
+//             agreedKey = entry.getKey();
+//             maxCount = entry.getValue();
+//         }
+//     }
+
+//     // Phase 3: Ready
+//     if (maxCount >= 2 * t + 1) {
+//         return true;
+//     }
+
+//     return false;
+// }
+
+
+
+//     public void merge(IServer _destination) {
+//     long t1 = System.nanoTime();
+    
+//     List<Triple> triplesFromSource = this.get_all();
+//     List<Triple> triplesFromDestination = _destination.get_all();
+    
+//     List<Triple> agreedTriples = new ArrayList<>();
+
+//     // Run Bracha’s consensus for each triple
+//     for (Triple triple : triplesFromSource) {
+//         if (brachaAgreement(triple, _destination)) {
+//             agreedTriples.add(triple);
+//         }
+//     }
+
+//     for (Triple triple : triplesFromDestination) {
+//         if (brachaAgreement(triple, this)) {
+//             agreedTriples.add(triple);
+//         }
+//     }
+
+//     // Apply the agreed triples
+//     for (Triple triple : agreedTriples) {
+//         this.push(triple.get_subject(), triple.get_predicate(), triple.get_object(), triple.get_timestamp().toString());
+//         _destination.push(triple.get_subject(), triple.get_predicate(), triple.get_object(), triple.get_timestamp().toString());
+//     }
+
+//     long t3 = System.nanoTime();
+//     System.out.println("Total time taken with consensus: " + (t3-t1) + " nanoseconds.");
+// }
+
+
+    
+
     @Override
     public void merge(IServer _destination) {
 
